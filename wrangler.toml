@@ -1,12 +1,23 @@
-# Cloudflare Pages Wrangler Configuration
-# This file provides compatibility settings for Cloudflare Pages deployment.
-# It ensures nodejs_compat is always set, so users don't need to configure it manually.
+# Cloudflare Pages Wrangler Configuration for KVideo
+# This file ensures the necessary compatibility flags are applied.
+# Place this file in the root of your repository.
 
 name = "kvideo"
 pages_build_output_dir = ".vercel/output/static"
 
-compatibility_date = "2026-04-19"
+# Use a fixed compatibility date for stability, instead of a dynamic date.
+# Update this date only when you need newer runtime features.
+compatibility_date = "2025-11-01"
 compatibility_flags = ["nodejs_compat"]
 
-[vars]
-# Environment variables can be set here or in Cloudflare Dashboard
+# ----- Build Configuration -----
+# These settings are for reference; actual build commands are set in the Cloudflare Dashboard.
+# [build]
+# command = "npm run build"
+# output_dir = ".vercel/output/static"
+
+# ----- Environment Variables -----
+# It's recommended to set secrets like ACCESS_PASSWORD in the Cloudflare Dashboard
+# for better security, rather than hardcoding them here.
+# [vars]
+# ACCESS_PASSWORD = "your-secret-password"
